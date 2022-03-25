@@ -1,0 +1,24 @@
+apiVersion: kpack.io/v1alpha2
+kind: Image
+metadata:  
+  name: dotnet-aspnetapp
+  namespace: default
+spec:
+  build:
+    resources: {}
+  builder:
+    kind: ClusterBuilder
+    name: default
+  # cache:
+  #   volume:
+  #     size: 2G
+  failedBuildHistoryLimit: 10
+  imageTaggingStrategy: BuildNumber
+  serviceAccountName: default
+  source:
+    git:
+      revision: main
+      url: https://github.com/dmnt3d/dotnet-aspnetapp.git
+    subPath: aspnetapp
+  successBuildHistoryLimit: 10
+  tag: index.docker.io/dmnt3d/dotnet-aspnetapp
