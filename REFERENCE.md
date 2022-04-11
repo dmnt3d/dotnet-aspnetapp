@@ -18,9 +18,16 @@ docker run --rm -it -p 8000:8080 aspnetapp:paketo
 ## Imperative:
 kp image create dotnet-aspnetapp --tag index.docker.io/dmnt3d/dotnet-aspnetapp --cluster-builder default --sub-path aspnetapp --git  https://github.com/dmnt3d/dotnet-aspnetapp.git --git-revision main
 
-- ClusterBuilder base or default
+
 ## Declarative
 k apply -f image.yaml 
+
+### watch the build:
+kp build list spring-petclinic
+kp build logs spring-petclinic
+k describe image spring-petclinic
+
+kp image status spring-petclinic
 
 ## Run:
 docker run --rm -it -p 8080:8080 dmnt3d/dotnet-aspnetapp
