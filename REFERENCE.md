@@ -26,4 +26,9 @@ k apply -f image.yaml
 docker run --rm -it -p 8080:8080 dmnt3d/dotnet-aspnetapp
  
 
+# Kubernetes
+## Scale deployment
+- change replica
 
+# Trigger build:
+Index.cshtml

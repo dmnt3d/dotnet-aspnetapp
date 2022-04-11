@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+  labels:
+    app: aspnetapp
+spec:
+  selector:
+    matchLabels:
+      app: aspnetapp
+  replicas: 3
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: aspnetapp
+    spec:
+      containers:
+      - name: aspnetapp
+        image: dmnt3d/dotnet-aspnetapp:b3.20220330.175852
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+          name: web
+      
+      restartPolicy: Always

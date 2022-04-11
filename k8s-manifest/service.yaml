@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: aspnetapp
+spec:
+  selector:
+    app: aspnetapp
+  type: LoadBalancer
+  # loadBalancerIP: 172.16.0.142
+  ports:
+  - name: aspnetapp
+    port: 80
+    targetPort: 8080
+    protocol: TCP
