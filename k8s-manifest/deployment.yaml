@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: aspnetapp
-  replicas: 3
+  replicas: 1
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: aspnetapp
-        image: dmnt3d/dotnet-aspnetapp@sha256:443cc1487fa5ca726264cda2269cc790cdd147eb6f8ea0a1f087cd3b0e9d6da1
+        image: dmnt3d/dotnet-aspnetapp:b4.20220411.082328
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
