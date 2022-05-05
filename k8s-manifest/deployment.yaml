@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: aspnetapp
-  replicas: 1
+  replicas: 3
   strategy:
     rollingUpdate:
       maxSurge: 25%
