@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: aspnetapp
-        image: dmnt3d/dotnet-aspnetapp:b4.20220411.082328
+        image: dmnt3d/dotnet-aspnetapp@sha256:6018bd23a47e70e49573d9aab747245520e016043527c5bd6d480c954270e0eb
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
