@@ -23,8 +23,8 @@ kp image create dotnet-aspnetapp --tag index.docker.io/dmnt3d/dotnet-aspnetapp -
 k apply -f image.yaml 
 
 ### watch the build:
-kp build list spring-petclinic
-kp build logs spring-petclinic
+kp build list dotnet-aspnetapp
+kp build logs dotnet-aspnetapp
 k describe image spring-petclinic
 
 kp image status spring-petclinic
